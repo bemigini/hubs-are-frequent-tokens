@@ -1,0 +1,29 @@
+For CPU only machine:
+
+conda create -n hubs-freq-tokens python=3.10
+conda activate hubs-freq-tokens 
+
+conda install docopt h5py matplotlib nmslib pandas scikit-learn scipy tqdm
+
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
+
+conda install conda-forge::transformers
+
+
+----------------------------
+For GPU machine:
+
+conda create -n hubs-freq-tokens python=3.10
+conda activate hubs-freq-tokens
+
+conda install docopt h5py matplotlib nmslib pandas scikit-learn scipy tqdm
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+conda install conda-forge::transformers
+
+pip install 'accelerate>=0.26.0'
+
+pip install bitsandbytes==0.44.1
+
+

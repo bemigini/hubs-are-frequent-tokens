@@ -1,0 +1,18 @@
+{
+    "pythia": "/home/INSERT_PATH_HERE",
+    "pythia_main": "/home/INSERT_PATH_HERE",
+    "pythia_step512": "/home/INSERT_PATH_HERE",
+    "pythia_step4000": "/home/INSERT_PATH_HERE",
+    "pythia_step16000": "/home/INSERT_PATH_HERE",
+    "pythia_step64000": "/home/INSERT_PATH_HERE",
+    
+    "opt": "/home/INSERT_PATH_HERE",
+    
+    "mistral": "/home/INSERT_PATH_HERE",
+    
+    "olmo": "/home/INSERT_PATH_HERE",
+    "olmohf": "/home/INSERT_PATH_HERE",
+    "olmo_step1000": "/home/INSERT_PATH_HERE",
+    
+    "llama": "/home/INSERT_PATH_HERE"
+}

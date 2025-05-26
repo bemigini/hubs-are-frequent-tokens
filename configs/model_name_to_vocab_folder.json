@@ -1,0 +1,11 @@
+{
+    "pythia":"pythia-6.9b_main",
+    "pythia_step512":"pythia-6.9b_step512",
+    "pythia_step4000":"pythia-6.9b_step4000",
+    "pythia_step16000":"pythia-6.9b_step16000",
+    "pythia_step64000":"pythia-6.9b_step64000",
+    "olmo": "olmo-7b",
+    "opt": "opt-6.7b",
+    "mistral": "mistral-7b",
+    "llama": "llama3-8b"
+}
