@@ -280,8 +280,8 @@ def make_four_in_one_plot(
     fig, axs = plt.subplots(2, 2, figsize=(6.5, 5))
     fig.dpi = 300
     axs[0, 0].scatter(all_N_ks[0], all_hub_token_frequencies[0], s = 3)
-    axs[0, 0].set_title('Freq Pile10k', fontsize = fontsize)
-    axs[0, 0].set_ylabel('Preds Pile10k', fontsize = fontsize)
+    axs[0, 0].set_title('Preds Pile10k', fontsize = fontsize)
+    axs[0, 0].set_ylabel('Freq Pile10k', fontsize = fontsize)
     axs[0, 0].tick_params(axis='both', which='major', labelsize=fontsize-2)
     axs[0, 0].set_yscale('log')
     axs[0, 0].set_xscale('log')
@@ -291,16 +291,16 @@ def make_four_in_one_plot(
     axs[0, 1].tick_params(axis='both', which='major', labelsize=fontsize-2)
     axs[0, 1].set_yscale('log')
     axs[0, 1].set_xscale('log')
-    axs[0, 1].scatter(all_N_ks[1], all_hub_token_frequencies[1], s = 3)
-    axs[0, 1].set_title('Freq Bookcorpus', fontsize = fontsize)
+    axs[0, 1].scatter(all_N_ks[2], all_hub_token_frequencies[2], s = 3)
+    axs[0, 1].set_title('Preds Bookcorpus', fontsize = fontsize)
 
     axs[1, 0].sharex(axs[0, 0])
     axs[1, 0].sharey(axs[0, 0])
     axs[1, 0].tick_params(axis='both', which='major', labelsize=fontsize-2)
     axs[1, 0].set_yscale('log')
     axs[1, 0].set_xscale('log')
-    axs[1, 0].scatter(all_N_ks[2], all_hub_token_frequencies[2], s = 3)
-    axs[1, 0].set_ylabel('Preds Bookcorpus', fontsize = fontsize)
+    axs[1, 0].scatter(all_N_ks[1], all_hub_token_frequencies[1], s = 3)
+    axs[1, 0].set_ylabel('Freq Bookcorpus', fontsize = fontsize)
 
     axs[1, 1].sharex(axs[0, 0])
     axs[1, 1].sharey(axs[0, 0])
@@ -318,13 +318,13 @@ def make_four_in_one_plot(
     fontsize = fontsize, ha="right", va="bottom", bbox={"alpha":0.5, "pad":3}, 
     transform = axs[0, 0].transAxes)
 
-    axs[0, 1].text(0.95, 0.1, r'$\rho =$' + corrs[1], 
+    axs[0, 1].text(0.95, 0.1, r'$\rho =$' + corrs[2], 
     fontsize = fontsize, ha="right", va="bottom", bbox={"alpha":0.5, "pad":3}, 
     transform = axs[0, 1].transAxes)
 
-    axs[1, 0].text(0.95, 0.1, r'$\rho =$' + corrs[2], 
+    axs[1, 0].text(0.95, 0.1, r'$\rho =$' + corrs[1], 
     fontsize = fontsize, ha="right", va="bottom", bbox={"alpha":0.5, "pad":3}, 
-    transform = axs[1, 0].transAxes)
+    transform = axs[1, 0].transAxes)    
 
     axs[1, 1].text(0.95, 0.1, r'$\rho =$' + corrs[3], 
     fontsize = fontsize, ha="right", va="bottom", bbox={"alpha":0.5, "pad":3}, 
