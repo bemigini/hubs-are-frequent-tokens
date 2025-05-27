@@ -97,4 +97,31 @@ python run.py save-next-token-probs --output-folder=results --vocab-main-folder=
 ```
 
 
-WIP: More description coming 
+To get examples of hubs, use:
+```
+run.py get-hub-examples --output-folder=<file> --vocab-main-folder=<file> --copora-folder=<file> [options] 
+```
+Where copora-folder sets the folder from which to load the datasets. 
+Hub examples will be saved to: 
+
+output_folder/hub_examples_top\{top_num_hubs\}\_\{representation_prefix\}\_\{model_name\}\{dataset\}\_\{similarity\}_\{num_neighbours\}.json
+
+Where: 
+* top_num_hubs can be set with the --top-num-hubs=\<int\> option (default is 20).
+* representation_prefix is "tt" for token to token, "cc" for context to context and "ct" for context to token.
+* num_neighbours can be set with the --num-neighbours=\<int\> option (default is 10). 
+
+Example of use:
+```
+python run.py get-hub-examples --output-folder=results --vocab-main-folder="../unembeddings" --copora-folder=/home/user/copora --cuda
+```
+
+Templates for slurm bash scripts can be found next to the run file with names starting with "slurm" and ending with "_ex.sh".  
+
+
+## Authors and acknowledgment
+We thank Santiago Acevedo, Luca Moschella, the members of the COLT group at Universitat Pompeu Fabra and the ARR reviewers for feedback and advice. Beatrix M. G. Nielsen was supported by the Danish Pioneer Centre for AI, DNRF grant number P1. Iuri Macocco and Marco Baroni received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No.~101019291)  and from the Catalan government (AGAUR grant SGR 2021 00470). This paper reflects the authors’ view only, and the funding agencies are not responsible for any use that may be made of the information it contains.
+
+## License 
+
+See LICENSE.
