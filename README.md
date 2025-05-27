@@ -66,7 +66,7 @@ pip install bitsandbytes==0.44.1
 ```
 
 ## Datasets
-
+We use the 3 datasets made available by [Cheng et al. (2025)](https://openreview.net/attachment?id=0fD3iIBhlV&name=pdf). Each dataset consists of 50K sequences of 20 tokens randomly extracted from Bookcorpus ([Zhu et al., 2015](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Zhu_Aligning_Books_and_ICCV_2015_paper.pdf)), Pile10k ([Gao et al., 2020](https://arxiv.org/abs/2201.10005)) and WikiText-103 ([Merity et al., 2017](https://arxiv.org/abs/1609.07843)), respectively.
 
 
 
