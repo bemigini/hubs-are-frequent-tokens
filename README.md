@@ -69,5 +69,32 @@ pip install bitsandbytes==0.44.1
 We use the 3 datasets made available by [Cheng et al. (2025)](https://openreview.net/attachment?id=0fD3iIBhlV&name=pdf). Each dataset consists of 50K sequences of 20 tokens randomly extracted from Bookcorpus ([Zhu et al., 2015](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Zhu_Aligning_Books_and_ICCV_2015_paper.pdf)), Pile10k ([Gao et al., 2020](https://arxiv.org/abs/2201.10005)) and WikiText-103 ([Merity et al., 2017](https://arxiv.org/abs/1609.07843)), respectively.
 
 
+## Usage
+Config files used to point to relevant folders can be found in the config folder.
+
+
+**model_name_to_path.json** should contain paths to the models. That is if the Pythia models should be loaded from the path "/home/username/pythia", then this should be inserted as the value for the "pythia" key. 
+
+
+**model_name_to_vocab_folder.json** should contain folders with the unembeddings of the relevant model. The main folder can be set later as the **--vocab-main-folder** argument. The code will expect to find the unembeddings with the file name "unemb.pickle" (except for opt where it is "emb.pickle") in the main folder combined with the relevant folder path from model_name_to_vocab_folder.json. For example for the Pythia model, unembeddings will be loaded from: vocab_main_folder/model_name_to_vocab_folder\['pythia'\]/unemb.pickle. 
+
+
+To see all options, use:
+```
+python run.py -h
+```
+To calculate and save next token probabilities use 
+```
+run.py save-next-token-probs --output-folder=<file> --vocab-main-folder=<file> --all-emb-folder=<file> [options] 
+```
+
+Where **all-emb-folder** is a folder containing files with names "hidden_\{dataset\}\_sane\_\{model_name\}\_reps.pickle" which contains pickled dictionaries with layer numbers as keys and embeddings as values.
+Alternatively, embeddings can be saved as h5 files in a folder named "embeddings" at the same level as the configs folder. In this case the files must be named "embeddings\_\{model_name\}_\{dataset\}\_l\{last_layer_number\}_emb.h5" and the **all-emb-folder** argument will be ignored. 
+
+Example of use: 
+```
+python run.py save-next-token-probs --output-folder=results --vocab-main-folder="../unembeddings" --all-emb-folder=/home/user/representation_pickles --cuda
+```
+
 
 WIP: More description coming 
